@@ -1,6 +1,6 @@
 import 'module-alias/register';
 import { ExpressServer } from './server';
-import { articleRoute } from "@src/main/router/v1";
+import { articleRoute, flowerRoute } from "@src/main/router/v1";
 import mongoose from "mongoose";
 import config from "@src/main/config";
 
@@ -15,7 +15,7 @@ try {
 const server = new ExpressServer(config.SERVER_PORT);
 
 server.addRoutes('/api/article', articleRoute);
-
+server.addRoutes('/api/flower', flowerRoute);
 
 server.start();
 
