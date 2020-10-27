@@ -1,8 +1,7 @@
 import express from 'express';
 import bodyParser from "body-parser";
-//import { AddArticleController, GetArticleController, getArticleByTextController, UpdateFlowerArticleController, RemoveArticleController } from "@src/delivery/controller/article";
-import { AddFlowerController, RemoveFlowerController } from "@src/delivery/controller/flower";
-
+//import { AddFlowerController, GetFlowerController, getFlowerByTextController, UpdateFlowerFlowerController, RemoveFlowerController } from "@src/delivery/controller/flower";
+import { AddFlowerController, GetFlowerController, getFlowerByTextController, RemoveFlowerController } from "@src/delivery/controller/flower";
 import { FlowerGateway } from "@src/infrastructure/db/mongoose";
 import { adaptRoute } from "../../adapter";
 
@@ -10,19 +9,20 @@ const jsonParser = bodyParser.json();
 
 const router = express.Router();
 
-/* pesquisa artigos dado um texto como filtro */
-//router.get('/searchArticle', jsonParser, adaptRoute(new getArticleByTextController(new ArticleGateway())));
+/* pesquisa flores dado um texto como filtro */
+router.get('/searchFlower', jsonParser, adaptRoute(new getFlowerByTextController(new FlowerGateway())));
 
-/* pega todos os artigos ou um artigo especifico caso venha com o id parametro*/
-//router.get('/:id?', jsonParser, adaptRoute(new GetArticleController(new ArticleGateway())));
+/* pega todos as flores ou uma flor especifica caso venha com o id parametro*/
+router.get('/:id?', jsonParser, adaptRoute(new GetFlowerController(new FlowerGateway())));
 
-/* adiciona novo artigo */
+/* adiciona nova flor */
 router.post('/', jsonParser, adaptRoute(new AddFlowerController(new FlowerGateway())));
 
-/* atualiza um artigo especificando o id */
+/* atualiza uma flor especificando o id */
 //router.put('/:id', jsonParser, adaptRoute(new UpdateFlowerController(new FlowerGateway())));
 
 /* remove um artigo especificando um id */
 router.delete('/:id?', jsonParser, adaptRoute(new RemoveFlowerController(new FlowerGateway())));
+
 
 export const flowerRoute = router;

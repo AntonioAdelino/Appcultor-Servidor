@@ -1,5 +1,5 @@
 export * from "./addFlower";
-//export * from "./getArticle";
-//export * from "./getArticleByText";
+export * from "./getFlower";
+export * from "./getFlowerByText";
 //export * from "./updateArticle";
 export * from "./removeFlower";
