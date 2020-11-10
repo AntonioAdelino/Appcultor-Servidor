@@ -28,7 +28,7 @@ export class FlowerGateway implements IFlowerGateway {
     }
 
     getByText(text: string, query: object): Promise<Flower[]> {
-        return this._model.find({ ...query, $text: { $search: text, $language: "pt" } }, { score: { $meta: "textScore" } })
+        return this._model.find({ ...query, $text: { $search: text } }, { score: { $meta: "textScore" } })
             .sort({ score: { $meta: "textScore" } })
             .limit(20)
             .then(docs => {

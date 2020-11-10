@@ -3,12 +3,12 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 
 
 export interface IFlowerModel extends Document {
-  
+
   scientificName: string,
   names: [string],
   family?: string,
   flowerResources?: [string],
-  
+
 }
 
 const flowerSchema = new Schema(
@@ -21,6 +21,6 @@ const flowerSchema = new Schema(
   { versionKey: false, timestamps: { createdAt: 'created_at' } },
 );
 
-flowerSchema.index({ '$**': 'text' });
+flowerSchema.index({ '$**': 'text' }, { default_language: "portuguese" });
 
 export const flowerModel: Model<IFlowerModel> = mongoose.model('Flower', flowerSchema);

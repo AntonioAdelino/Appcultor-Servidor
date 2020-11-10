@@ -7,7 +7,9 @@ import { ArticleGateway } from "@src/infrastructure/db/mongoose";
 import { IValidation, RequiredFieldValidation, ValidationComposite, } from "@src/helper/validations";
 import { Article } from "@domain/entity"
 import { exit } from "process";
+import { articleSeed } from "./articleSeed";
 
+export * from "./articleSeed";
 
 export type Seeds = {
     name: string,
@@ -73,15 +75,15 @@ export class ArticleSeeder {
 const init = async () => {
 
     const validations: IValidation[] = [
-        new RequiredFieldValidation('articleCod'),
-        new RequiredFieldValidation('location'),
-        new RequiredFieldValidation('entity'),
-        new RequiredFieldValidation('country'),
-        new RequiredFieldValidation('status'),
-        new RequiredFieldValidation('type'),
+        new RequiredFieldValidation('title'),
+        new RequiredFieldValidation('content'),
+        new RequiredFieldValidation('tags'),
     ];
 
     const articleSeeder = new ArticleSeeder(mongoose, new AddArticle(new ArticleGateway(), new ValidationComposite(validations)));
+
+
+    articleSeeder.addSeed('ArticleSeed', articleSeed);
 
     try {
         await articleSeeder.populate();

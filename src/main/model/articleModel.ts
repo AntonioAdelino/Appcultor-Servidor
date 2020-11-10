@@ -21,6 +21,6 @@ const articleSchema = new Schema(
   { versionKey: false, timestamps: { createdAt: 'created_at' } },
 );
 
-articleSchema.index({ '$**': 'text' });
+articleSchema.index({ '$**': 'text' }, { default_language: "portuguese" });
 
 export const articleModel: Model<IArticleModel> = mongoose.model('Article', articleSchema);
