@@ -8,6 +8,7 @@ export interface IFlowerModel extends Document {
   names: [string],
   family?: string,
   flowerResources?: [string],
+  images?: [string],
 
 }
 
@@ -17,6 +18,7 @@ const flowerSchema = new Schema(
     names: { required: true, type: [String] },
     family: { type: String },
     flowerResources: { type: [String] },
+    images: { type: [String] },
   },
   { versionKey: false, timestamps: { createdAt: 'created_at' } },
 );

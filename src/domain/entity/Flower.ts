@@ -5,4 +5,5 @@ export type Flower = {
     names: [string],
     family?: string,
     flowerResources?: [string],
+    images?: [string],
 }
