@@ -16,7 +16,8 @@ export class HttpRequestToFlowerFactory {
             names: body.names,
             family: body.family,
             flowerResources: body.flowerResources,
-            images: body.images
+            images: body.images,
+            reference: body.reference
             
         }
         return Flower;

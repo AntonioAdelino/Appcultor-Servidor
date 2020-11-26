@@ -6,4 +6,5 @@ export type Flower = {
     family?: string,
     flowerResources?: [string],
     images?: [string],
+    reference?: string,
 }
