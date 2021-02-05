@@ -1,10 +1,12 @@
 export * from "./flower";
 export * from "./article";
-import { articleInit, flowerInit } from "."
+export * from "./tag"
+import { articleInit, flowerInit, tagInit } from "."
 
 const init = async () => {
     await flowerInit();
     await articleInit();
+    await tagInit();
     process.exit();
 }
 
