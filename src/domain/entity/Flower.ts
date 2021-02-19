@@ -7,4 +7,5 @@ export type Flower = {
     flowerResources?: [string],
     images?: [string],
     reference?: string,
+    author?: string
 }
