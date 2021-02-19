@@ -28,8 +28,8 @@ export class FlowerGateway implements IFlowerGateway {
     }
 
     getByText(text: string, query: object): Promise<Flower[]> {
-        return this._model.find({ ...query, $text: { $search: text } }, { score: { $meta: "textScore" } })
-            .sort({ score: { $meta: "textScore" } })
+        return this._model.find( {$or: [{ names: { $regex: new RegExp(`${text}`) }},
+                    { scientificName: { $regex: new RegExp(`${text}`) }} ] } )
             .limit(20)
             .then(docs => {
                 const flowers: Flower[] = docs;
