@@ -35,9 +35,9 @@ services:
       - ./src:/home/node/app/src
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.app.rule=Host(`appcultor.api.uname.group`)"
-      - "traefik.http.routers.app.entrypoints=web"
-      - "traefik.http.services.app.loadbalancer.server.port=3001"
+      - "traefik.http.routers.appcultor.rule=Host(`appcultor.api.uname.group`)"
+      - "traefik.http.routers.appcultor.entrypoints=web"
+      - "traefik.http.services.appcultor.loadbalancer.server.port=3001"
       - "traefik.docker.network=web"
     links:
       - db
