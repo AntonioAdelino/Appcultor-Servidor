@@ -54,6 +54,8 @@ export class UserGateway implements IUserGateway {
                 throw new Error('Authentication Error')
             }
 
+            user._id = searchedUser._id;
+
             return user;
         });
     }
