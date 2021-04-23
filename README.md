@@ -17,6 +17,9 @@ Este sistema funciona como o servidor do aplicativo **Appcultor** e foi escrito 
  • **Luan Lins**, clique [aqui](https://github.com/luancsl) para acessar o
    perfil do Github.
    
+ • **Pedro Vinícius**, clique [aqui](https://github.com/PedroViniciusMelo) para acessar o
+   perfil do Github.
+   
  • **Victor Andrade**,  clique [aqui](https://github.com/Victor-Andrade)
    para acessar o perfil do Github.
 
