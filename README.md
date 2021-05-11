@@ -1,5 +1,5 @@
 
-![Appcultor](https://i.imgur.com/kPN62Pr.png)
+![Appcultor](https://i.imgur.com/wLffyvM.png)
 # Bem vindo ao **Appcultor Servidor**!
 
 > ### Detalhes do Sistema
